@@ -10,6 +10,13 @@ import UIKit
 
 class RootViewController: UIViewController {
 
+    @IBOutlet weak var playerIndicator: UIImageView!
+    @IBOutlet weak var playerMessage: UILabel!
+    @IBAction func cellClicked(_ sender: Any) {
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
