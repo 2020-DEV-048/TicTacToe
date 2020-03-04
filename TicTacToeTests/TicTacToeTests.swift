@@ -19,9 +19,16 @@ class TicTacToeTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    //Verifies if Player 1 is the Active Player
     func testPlayer1IsFirst() {
         let playerSign = ticTacToeLogic.checkActivePlayer()
         XCTAssertEqual(playerSign, 1, "ActivePlayer is Player 1 : X")
+    }
+    
+    //Verifies if cell already selected; prevents re-selection
+    func testPlayerSelectedCell() {
+       let cellValue = ticTacToeLogic.checkAndUpdateCellState(position: 2)
+        XCTAssertEqual(cellValue, true, "Player Already selected Cell")
     }
 
 }

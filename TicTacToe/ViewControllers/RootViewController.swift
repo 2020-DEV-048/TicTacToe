@@ -17,9 +17,25 @@ class RootViewController: UIViewController {
     @IBOutlet weak var playerMessage: UILabel!
     
     //Action on click of board cell
-    @IBAction func cellClicked(_ sender: Any) {
-    
-        
+    @IBAction func cellClicked(_ sender: UIButton) {
+        let position = sender.tag
+        var cellImage = UIImage(named:"")
+        if ticTacToeLogic.checkAndUpdateCellState(position: position) {
+            //cellState[position] = activePlayer
+            if activePlayer == 1{
+                cellImage = UIImage(named:"XIcon")
+                playerIndicator.image = UIImage(named:"XIcon")
+                playerMessage.text = AppConstants.player2Turn
+                activePlayer = 2
+            }
+            else{
+                cellImage = UIImage(named:"OIcon")
+                playerIndicator.image = UIImage(named:"OIcon")
+                playerMessage.text = AppConstants.player1Turn
+                activePlayer = 1
+            }
+            sender.setImage(cellImage!, for: .normal)
+        }
     }
     
     //Action on click of Reset button

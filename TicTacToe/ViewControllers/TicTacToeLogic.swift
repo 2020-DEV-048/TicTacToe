@@ -12,6 +12,7 @@ import Foundation
 
 class TicTacToeLogic {
     var currentPlayer = 1
+    var cellState = [0,0,0,0,0,0,0,0,0] // Maintains the cell state - 0: Not Selected; 1: Player 1; 2: Player 2
     
     func setActivePlayer(_player: Int) {
         currentPlayer = _player
@@ -29,5 +30,13 @@ class TicTacToeLogic {
             print("Active Player value is incorrect")
         }
         return currentPlayer
+    }
+    
+    func checkAndUpdateCellState(position: Int)->Bool{
+        if cellState[position] == 0 {
+            cellState[position] = currentPlayer
+            return true
+        }
+        return false
     }
 }
