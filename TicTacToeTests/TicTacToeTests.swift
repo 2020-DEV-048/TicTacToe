@@ -30,5 +30,12 @@ class TicTacToeTests: XCTestCase {
        let cellValue = ticTacToeLogic.checkAndUpdateCellState(position: 2)
         XCTAssertEqual(cellValue, true, "Player Already selected Cell")
     }
+    
+    //Verifies if player is toggled on selection
+    func testPlayerIsToogled() {
+        let currentPlayer = 1
+        let newCurrentPlayer = ticTacToeLogic.tooglePlayer(player: currentPlayer)
+        XCTAssertNotEqual(currentPlayer, newCurrentPlayer, "Player Toogled")
+    }
 
 }

@@ -39,4 +39,14 @@ class TicTacToeLogic {
         }
         return false
     }
+    
+    func tooglePlayer(player: Int)->Int{
+        if currentPlayer == 1 {
+            currentPlayer = 2
+        }
+        else{
+            currentPlayer = 1
+        }
+        return currentPlayer
+    }
 }
