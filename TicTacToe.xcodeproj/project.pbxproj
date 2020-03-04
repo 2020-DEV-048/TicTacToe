@@ -16,6 +16,12 @@
 		3F21E02C240C40490030F4FF /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F21E02B240C40490030F4FF /* TicTacToeTests.swift */; };
 		3F21E037240C40490030F4FF /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F21E036240C40490030F4FF /* TicTacToeUITests.swift */; };
 		3F21E087240C42790030F4FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F21E086240C42790030F4FF /* Constants.swift */; };
+		3F6672E3240F188500E24D9B /* TicTacToeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6672E2240F188500E24D9B /* TicTacToeLogic.swift */; };
+		3F6672E6240F402C00E24D9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F21E086240C42790030F4FF /* Constants.swift */; };
+		3F6672E7240F402D00E24D9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F21E086240C42790030F4FF /* Constants.swift */; };
+		3F6672EE240F58FA00E24D9B /* TicTacToeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6672E2240F188500E24D9B /* TicTacToeLogic.swift */; };
+		3F6672EF240F59FB00E24D9B /* TicTacToeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6672E2240F188500E24D9B /* TicTacToeLogic.swift */; };
+		3F6672F0240F5A0800E24D9B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F21E018240C40460030F4FF /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,7 @@
 		3F21E036240C40490030F4FF /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		3F21E038240C40490030F4FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F21E086240C42790030F4FF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F6672E2240F188500E24D9B /* TicTacToeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +173,7 @@
 		3F21E084240C41C20030F4FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F6672E2240F188500E24D9B /* TicTacToeLogic.swift */,
 				3F21E018240C40460030F4FF /* RootViewController.swift */,
 			);
 			path = ViewControllers;
@@ -318,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6672E3240F188500E24D9B /* TicTacToeLogic.swift in Sources */,
 				3F21E019240C40460030F4FF /* RootViewController.swift in Sources */,
 				3F21E015240C40460030F4FF /* AppDelegate.swift in Sources */,
 				3F21E017240C40460030F4FF /* SceneDelegate.swift in Sources */,
@@ -330,6 +339,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F21E02C240C40490030F4FF /* TicTacToeTests.swift in Sources */,
+				3F6672EE240F58FA00E24D9B /* TicTacToeLogic.swift in Sources */,
+				3F6672F0240F5A0800E24D9B /* RootViewController.swift in Sources */,
+				3F6672E6240F402C00E24D9B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +350,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F21E037240C40490030F4FF /* TicTacToeUITests.swift in Sources */,
+				3F6672EF240F59FB00E24D9B /* TicTacToeLogic.swift in Sources */,
+				3F6672E7240F402D00E24D9B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks;
 				INFOPLIST_FILE = TicTacToe/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -512,6 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks;
 				INFOPLIST_FILE = TicTacToe/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
