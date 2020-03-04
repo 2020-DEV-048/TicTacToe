@@ -20,7 +20,8 @@ class RootViewController: UIViewController {
     @IBAction func cellClicked(_ sender: UIButton) {
         let position = sender.tag
         var cellImage = UIImage(named:"")
-        if ticTacToeLogic.checkAndUpdateCellState(position: position) {
+        var playerWon = 0
+        if (ticTacToeLogic.checkAndUpdateCellState(position: position) && ticTacToeLogic.checkIfGameStopped() == false){
             if activePlayer == 1{
                 cellImage = UIImage(named:"XIcon")
                 playerIndicator.image = UIImage(named:"OIcon")
@@ -33,11 +34,46 @@ class RootViewController: UIViewController {
             }
             sender.setImage(cellImage!, for: .normal)
             activePlayer = ticTacToeLogic.tooglePlayer(player: activePlayer)
+            
+            playerWon = ticTacToeLogic.checkIfPlayerWon()
+            if (playerWon != 0){
+                switch playerWon {
+                case 1:
+                    playerIndicator.image = UIImage(named:"XIcon")
+                    playerMessage.text = AppConstants.player1Won
+                case 2:
+                    playerIndicator.image = UIImage(named:"OIcon")
+                    playerMessage.text = AppConstants.player2Won
+                default:
+                    print ("Incorrect Player Won Value")
+                }
+            }
+        }
+        
+        if (ticTacToeLogic.checkIfGameDraw() && !ticTacToeLogic.checkIfGameStopped()){
+                // Game is Draw
+                playerIndicator.image = UIImage(named:"DrawIcon")
+                playerMessage.text = AppConstants.gameDraw
         }
     }
     
     //Action on click of Reset button
     @IBAction func resetClicked(_ sender: Any) {
+        // Reset the Game State
+        activePlayer = 1
+        ticTacToeLogic.setActivePlayer(_player: activePlayer)
+        
+        // Reset the Board Cell
+        for tag in 1...9
+        {
+            let button = self.view.viewWithTag(tag) as? UIButton
+            button?.setImage(UIImage(named:""), for: UIControlState())
+        }
+                
+        // Reset the Game State Indicator""
+        playerIndicator.image = UIImage(named:"XIcon")
+        playerMessage.text = AppConstants.player1Turn
+        
         
     }
     
@@ -54,11 +90,8 @@ class RootViewController: UIViewController {
 // MARK: Private methods
 private extension RootViewController {
     func startPlaying() {
-        print("Start Playing")
         activePlayer = 1
         ticTacToeLogic.setActivePlayer(_player: activePlayer)
-        let next = ticTacToeLogic.checkActivePlayer()
-        print (next)
     }
 }
 
